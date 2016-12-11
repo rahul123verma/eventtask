@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Update Tasks
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li ng-repeat="x in displaydata | reverse"><a href="/eventtask/#/update/{{x.id}}">{{x.title}}</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="col-sm-4"><button type="button" class="btn btn-primary" onclick="location.href = '#/create';">Create Task </button></div>
+    </div>
+</div>
+
+
+<h2>Tasks</h2>
+<table class="table">
+    <thead>
+    <tr class="danger">
+        <th>Index</th>
+        <th>Title </th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="success" ng-repeat="x in displaydata | reverse">
+        <td>{{x.id}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.discription}}</td>
+        <td>{{x.STAT |status }}</td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+
+
+
+<ul class="pagination">
+    <li ng-repeat="n in [] | range:per_page:total" ng-class="page_number==n-1 ? 'active' : 'palaceholder'" ><a href="/eventtask/#/{{n}}">{{n}}</a></li>
+
+
+</ul>

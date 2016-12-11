@@ -1,0 +1,31 @@
+<h2>Tasks</h2>
+<table class="table">
+    <thead>
+    <tr class="danger">
+        <th>Index</th>
+        <th>title </th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="success">
+        <td>Default</td>
+        <td>Defaultson</td>
+        <td>def@somemail.com</td>
+        <td>def@somemail.com</td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+{{per_page}}
+
+
+
+<ul class="pagination">
+    <li ng-repeat="n in [] | range:per_page:total"><a href="#">{{n}}</a></li>
+
+
+</ul>
